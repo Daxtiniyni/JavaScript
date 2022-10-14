@@ -12,19 +12,19 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gold;
+    background-color: slateblue;
 }
 
 header h1{
     font-size: 30px;
-    color: darkred;
+    color: black;
 }
 
 main{
     width: 100vw;
     height: auto;
     padding-top: 30px;
-    background-color: darkcyan;
+    background-color: slateblue;
 }
 
 main .formulario{
@@ -54,8 +54,9 @@ main .formulario form label{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: darkturquoise;
+    /* background-color: darkturquoise; */
     margin: 10px 0px;
+    color: whitesmoke;
 }
 
 main .formulario form label input{
@@ -89,6 +90,7 @@ main .formulario form #btnguardar{
     border: none;
     border-radius: 10px;
     background-color: darkgreen;
+    cursor: pointer;
 }
 
 main .formulario form #btncancelar{
@@ -97,6 +99,7 @@ main .formulario form #btncancelar{
     border: none;
     border-radius: 10px;
     background-color: darkred;
+    cursor: pointer;
 }
 
 main .lista{
@@ -107,7 +110,76 @@ main .lista{
     flex-direction: column;
 }
 
+main .lista{
+    color: whitesmoke;
+    font-weight: bold;
+}
+
 main .lista .listaAmigos{
     display: flex;
     flex-direction: column;
+}
+
+main .lista .listaAmigos div{
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .lista .listaAmigos div p{
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+main .lista .listaAmigos div button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkcyan;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.detallesamigo{
+    width: 300px;
+    height: 400px;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 150px);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+
+.detallesamigo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.detallesamigo p span{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.detallesamigo button{
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    background-color: darkred;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.oculto{
+    display: none;
 }
