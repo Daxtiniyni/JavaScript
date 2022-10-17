@@ -40,6 +40,17 @@ function pintar(){
     }
 }
 
+function cerrardetalles(tel){
+    let detalles=document.getElementById("btncerrar");
+    let amigo=amigos.find(a=>{
+        if(a.telefono==tel)
+        {
+            return a
+        }
+    });
+    detalles.classList.add("oculto");
+}
+
 function mostrardetalles(tel){
     let detalles=document.getElementById("detallesamigos");
     let amigo=amigos.find(a=>{
@@ -53,8 +64,18 @@ function mostrardetalles(tel){
     <h3>${amigo.nombre}</h3>
     <p><span>Telefono:</span> ${amigo.telefono}</p>
     <p><span>Correo:</span> ${amigo.correo}</p>
-    <button>Cerrar</button>`;
+    <button id="btncerrar">Cerrar</button>`;
     detalles.classList.remove("oculto");
+    esconderdetails();
+}
+
+function esconderdetails(){
+    let ocultar=document.getElementById("btncerrar");
+    ocultar.addEventListener("click", ocultar=>
+    {
+        let ventana=document.getElementById("detallesamigos")
+        ventana.classList.add("oculto");
+    });
 }
 
 btncancelar.addEventListener("click",(event)=>{
@@ -62,7 +83,14 @@ btncancelar.addEventListener("click",(event)=>{
     event.preventDefault();
 });
 
+
 btnguardar.addEventListener("click",(event)=>{
+    if(formulario[0].value!=""&&
+    formulario[1].value!=""&&
+    formulario[2].value!=""&&
+    formulario[3].value!=""){
+        
+    
     
     let contacto={
         nombre:formulario["nombre"].value,
@@ -74,7 +102,11 @@ btnguardar.addEventListener("click",(event)=>{
     amigos.push(contacto);
     limpiar();
     pintar();
-    
     event.preventDefault();
+}
+else{
+    event.preventDefault();
+    alert("Llena todos los campos")
+}
 })
 

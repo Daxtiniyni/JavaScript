@@ -12,23 +12,23 @@
         <h1>Directorio de Amigos</h1>
     </header>
     <main>
-        <section class="formulario">
+        <section class="formulario" >
             <h2>Agregar Amigo</h2>
-            <form action="" id="formulario">
+            <form action="" id="formulario" name="registro">
                 <label for="nombre">Nombre:
-                    <input type="text" name="nombre">
+                    <input type="text" name="nombre" id="nombre" required>
                 </label>
                 <label for="telefono">Telefono:
-                    <input type="text" name="telefono">
+                    <input type="text" name="telefono" id="telefono" required>
                 </label>
                 <label for="correo">Correo:
-                    <input type="text" name="correo">
+                    <input type="text" name="correo" id="correo" required>
                 </label>
                 <label for="Foto">Foto:
-                    <input type="text" name="foto">
+                    <input type="text" name="foto" id="foto" required>
                 </label>
                 <div>
-                    <button id="btnguardar">Guardar</button>
+                    <button type="submit" id="btnguardar">Guardar</button>
                     <button id="btncancelar">Cancelar</button>
                 </div>
             </form>
@@ -56,7 +56,7 @@
         <h3>Guillermo Davalos</h3>
         <p><span>Telefono:</span> 3221592171</p>
         <p><span>Correo:</span> guillogallugdg@gmail.com</p>
-        <button>Cerrar</button>
+        <button class="oculto detallesamigo" id="btncerrar">Cerrar</button>
     </div>
 
     <script src="JS/direcorio.js"></script>
