@@ -183,3 +183,13 @@ main .lista .listaAmigos div button{
 .oculto{
     display: none;
 }
+main .lista .listaAmigos div button.deletecon{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkred;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}

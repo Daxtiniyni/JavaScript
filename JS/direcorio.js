@@ -24,7 +24,7 @@ function pintar(){
         lista.innerHTML="";
         amigos.forEach((contacto)=>{
             let amigo=document.createElement("div");
-            amigo.innerHTML=`<p>${contacto.nombre}</p><button class="showdetails"><input type="hidden" value="${contacto.telefono}"/>Details</button>`
+            amigo.innerHTML=`<p>${contacto.nombre}</p><button class="showdetails"><input type="hidden" value="${contacto.telefono}"/>Details</button><button class="deletecon"><input type="hidden" value="${contacto.telefono}"/>Eliminar</button>`
             lista.appendChild(amigo);
         });
         let botones=document.getElementsByClassName("showdetails");
@@ -73,6 +73,7 @@ function esconderdetails(){
     let ocultar=document.getElementById("btncerrar");
     ocultar.addEventListener("click", ocultar=>
     {
+        
         let ventana=document.getElementById("detallesamigos")
         ventana.classList.add("oculto");
     });
@@ -109,4 +110,15 @@ else{
     alert("Llena todos los campos")
 }
 })
+
+function eliminarcontacto(){
+    let borrar=document.getElementsByClassName("deletecon");
+        // for (let i = 0; i < borrar.length; i++){
+        //     const elemnt = borrar[i];
+        //     elemnt.addEventListener("click",()=>{
+        //         eliminarcontacto(elemnt.children[0].value);
+        //     });
+        // }
+        alert("anda bien")
+}
 
