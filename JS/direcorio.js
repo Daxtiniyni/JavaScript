@@ -22,9 +22,9 @@ function pintar(){
     if(amigos.length>0)
     {
         lista.innerHTML="";
-        amigos.forEach((contacto)=>{
+        amigos.forEach((contacto,index)=>{
             let amigo=document.createElement("div");
-            amigo.innerHTML=`<p>${contacto.nombre}</p><button class="showdetails"><input type="hidden" value="${contacto.telefono}"/>Details</button><button class="deletecon"><input type="hidden" value="${contacto.telefono}"/>Eliminar</button>`
+            amigo.innerHTML=`<p>${contacto.nombre}</p><button class="showdetails"><input type="hidden" value="${contacto.telefono}"/>Details</button><button class="deletecon" ele="${index}">Eliminar</button>`
             lista.appendChild(amigo);
         });
         let botones=document.getElementsByClassName("showdetails");
@@ -32,6 +32,20 @@ function pintar(){
             const elemnt = botones[i];
             elemnt.addEventListener("click",()=>{
                 mostrardetalles(elemnt.children[0].value);
+            });
+        }
+        
+        botones=document.getElementsByClassName("deletecon");
+        let avisar=document.getElementById("deseaseliminar");
+        for (let i = 0; i < botones.length; i++){
+            const elemnt = botones[i];
+            elemnt.addEventListener("click",()=>{
+                avisar.innerHTML=`<h3>Deseas eliminar a ${amigos.nombre}</h3>
+                <button class="si">SI</button>
+                <button class="no">NO</button>`
+                avisar.classList.remove("ocultar")
+                // amigos.splice(elemnt.getAttribute("ele"),1);
+                // pintar();
             });
         }
     }
@@ -50,6 +64,8 @@ function cerrardetalles(tel){
     });
     detalles.classList.add("oculto");
 }
+
+
 
 function mostrardetalles(tel){
     let detalles=document.getElementById("detallesamigos");

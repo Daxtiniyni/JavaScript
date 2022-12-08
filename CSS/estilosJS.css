@@ -193,3 +193,44 @@ main .lista .listaAmigos div button.deletecon{
     cursor: pointer;
     font-weight: bold;
 }
+
+.eliminar{
+    width: 300px;
+    height: 100px;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 150px);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+
+.eliminar h3{
+    color: black;
+}
+
+.eliminar button{
+    width: 70px;
+    height: 35px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.eliminar button.si{
+    color: whitesmoke;
+    background-color: darkgreen;
+}
+
+.eliminar button.no{
+    color: whitesmoke;
+    background-color: darkred;
+}
+
+.ocultar{
+    display: none;
+}
