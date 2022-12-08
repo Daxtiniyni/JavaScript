@@ -1,140 +1,81 @@
-let amigos=[];
-
-let btnguardar=document.querySelector("#btnguardar");
-let btncancelar=document.querySelector("#btncancelar");
+// // alert("Si jala doc");
 
 
+// // var personas = ["Guillermo", "Chino", "HardMode", "Lincon"];
+
+// // Manera 2
+
+// var personas = {
+//     nombre : "guillermo",
+//     apellido : "davalos",
+//     edad : 22,
+//     correo : "guillogallugdg@gmail.com"
+// }
+
+// class miclase{
+//     constructor(nombre,apellido){
+//         this.nombre=nombre;
+//         this.apellido=apellido;
+//     }
+// }
+
+// var elMemo = new miclase("Guillermo", "Davalos");
+
+// // Manera 3
 
 
-let lista=document.querySelector(".listaAmigos");
-let formulario=document.querySelector("#formulario");
+// function laPersona(nombre,apellido){
+//     this.nombre=nombre;
+//     this.apellido=apellido;
+// }
 
-pintar();
+// var elGuillo = new laPersona ("Guillermo", "Davalos");
 
-function limpiar(){
-    formulario[0].value="";
-    formulario[1].value="";
-    formulario[2].value="";
-    formulario[3].value="";
-}
+// // Manera Chino
 
-function pintar(){
-    if(amigos.length>0)
-    {
-        lista.innerHTML="";
-        amigos.forEach((contacto,index)=>{
-            let amigo=document.createElement("div");
-            amigo.innerHTML=`<p>${contacto.nombre}</p><button class="showdetails"><input type="hidden" value="${contacto.telefono}"/>Details</button><button class="deletecon" ele="${index}">Eliminar</button>`
-            lista.appendChild(amigo);
-        });
-        let botones=document.getElementsByClassName("showdetails");
-        for (let i = 0; i < botones.length; i++){
-            const elemnt = botones[i];
-            elemnt.addEventListener("click",()=>{
-                mostrardetalles(elemnt.children[0].value);
-            });
-        }
-        
-        botones=document.getElementsByClassName("deletecon");
-        let avisar=document.getElementById("deseaseliminar");
-        for (let i = 0; i < botones.length; i++){
-            const elemnt = botones[i];
-            elemnt.addEventListener("click",()=>{
-                avisar.innerHTML=`<h3>Deseas eliminar a ${amigos.nombre}</h3>
-                <button class="si">SI</button>
-                <button class="no">NO</button>`
-                avisar.classList.remove("ocultar")
-                // amigos.splice(elemnt.getAttribute("ele"),1);
-                // pintar();
-            });
-        }
-    }
-    else{
-        lista.innerHTML="<h2>No tenemos amigos</h2>"
-    }
-}
+// let variables={
+//     nombre : "Asus",
+//     ram : "128GB"
+// }
 
-function cerrardetalles(tel){
-    let detalles=document.getElementById("btncerrar");
-    let amigo=amigos.find(a=>{
-        if(a.telefono==tel)
-        {
-            return a
-        }
-    });
-    detalles.classList.add("oculto");
-}
+// // let nombre = variables.nombre;
+// // let ram = variables.ram;
+
+// let nombre = variables["nombre"];
+// let ram = variables["ram"];
+
+// let frase = `Mi computadore ${variables.nombre} tiene ${variables.ram} de ram`;
 
 
+// segunda parte classe (no entendi)
 
-function mostrardetalles(tel){
-    let detalles=document.getElementById("detallesamigos");
-    let amigo=amigos.find(a=>{
-        if(a.telefono==tel)
-        {
-            return a
-        }
-    });
+// function lafuncion(variable) {
+//     return variable*2;
+// }
 
-    detalles.innerHTML=`<img src="${amigo.foto}" alt="">
-    <h3>${amigo.nombre}</h3>
-    <p><span>Telefono:</span> ${amigo.telefono}</p>
-    <p><span>Correo:</span> ${amigo.correo}</p>
-    <button id="btncerrar">Cerrar</button>`;
-    detalles.classList.remove("oculto");
-    esconderdetails();
-}
+// (variable)=>{
+//     return variable*2
+// }
 
-function esconderdetails(){
-    let ocultar=document.getElementById("btncerrar");
-    ocultar.addEventListener("click", ocultar=>
-    {
-        
-        let ventana=document.getElementById("detallesamigos")
-        ventana.classList.add("oculto");
-    });
-}
+// variable=>{
+//     return variable*2
+// }
 
-btncancelar.addEventListener("click",(event)=>{
-    limpiar();
-    event.preventDefault();
-});
+// variable=>variable*2;
+
+// ()=>variable*2
 
 
-btnguardar.addEventListener("click",(event)=>{
-    if(formulario[0].value!=""&&
-    formulario[1].value!=""&&
-    formulario[2].value!=""&&
-    formulario[3].value!=""){
-        
-    
-    
-    let contacto={
-        nombre:formulario["nombre"].value,
-        telefono:formulario["telefono"].value,
-        correo:formulario["correo"].value,
-        foto:formulario["foto"].value
-    };
+// tercera parte clase ()
 
-    amigos.push(contacto);
-    limpiar();
-    pintar();
-    event.preventDefault();
-}
-else{
-    event.preventDefault();
-    alert("Llena todos los campos")
-}
-})
+// articulos.array.forEach(valor => {
+//     console.log(valor.nombre)    
+// });
 
-function eliminarcontacto(){
-    let borrar=document.getElementsByClassName("deletecon");
-        // for (let i = 0; i < borrar.length; i++){
-        //     const elemnt = borrar[i];
-        //     elemnt.addEventListener("click",()=>{
-        //         eliminarcontacto(elemnt.children[0].value);
-        //     });
-        // }
-        alert("anda bien")
-}
+// var articuloscaros=articulos.filter((valor)=>{
+//     if
+//     return valor;
+// })
 
+var articulosdescuento=artculos.map(articulosdescuento
+    )
